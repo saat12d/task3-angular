@@ -3,72 +3,81 @@
         <div class="row mb-3">
             <div class="col-md-6 form-group">
                 <label for="fullname" class="form-label"><span style="color:#ff0000">*</span> Full name</label>
-                <input id="fullname" type="text" class="form-control"  aria-label="First name" required>
+                <input ngModel name="fullName" #fullName="ngModel" (change)="log(fullName)" id="fullname" type="text" class="form-control"  aria-label="First name" required>
+                <div class="alert alert-danger mt-3" *ngIf="fullName.touched && !fullName.valid">Full Name is required!</div>
             </div>
             <div class="col-md-6 form-group">
                 <label for="username" class="form-label"><span style="color:#ff0000">*</span> Username</label>
-                <input id="username" type="text" class="form-control"  aria-label="username" required>
+                <input ngModel name="username" #username="ngModel" id="username" type="text" class="form-control"  aria-label="username" required>
+                <div class="alert alert-danger mt-3" *ngIf="username.touched && !username.valid">Username is required!</div>
             </div>
         </div>
         <div class="row mb-3 form-group">
             <div class="col-md-6">
                 <label for="password" class="form-label"><span style="color:#ff0000">*</span> Password</label>
-                <input id="password" type="password" class="form-control"  aria-label="password" required>
+                <input ngModel name="password" #password="ngModel" id="password" type="password" class="form-control"  aria-label="password" required>
+                <div class="alert alert-danger mt-3" *ngIf="password.touched && !password.valid">Password is required!</div>
             </div>
             <div class="col-md-6 form-group">
                 <label for="phone" class="form-label"><span style="color:#ff0000">*</span> Phone Number</label>
-                <input id="phone" type="text" class="form-control"  aria-label="phone" required>
+                <input ngModel name="phone" id="phone" #phone="ngModel" type="text" class="form-control"  aria-label="phone" required>
+                <div class="alert alert-danger mt-3" *ngIf="phone.touched && !phone.valid">Phone Number is required!</div>
+
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 mt-4 form-group">
                 <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                    <input ngModel name="sendEmail" #sendEmail="ngModel" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Send Email?</label> <br>
-
+                    <div class="alert alert-danger mt-3" *ngIf="sendEmail.touched && !sendEmail.valid">Send Email is required!</div>
                 </div>
                   
             </div>
             <div class="col-md-6 form-group">
                 <label for="email" class="form-label"><span style="color:#ff0000">*</span> Email</label>
-                <input id="email" type="email" class="form-control"  aria-label="email" required>
+                <input ngModel name="email" id="email" type="email" class="form-control"  aria-label="email" required>
+                <div class="alert alert-danger mt-3" *ngIf="fullName.touched && !fullName.valid">Email is required!</div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 form-group">
                 <label for="address" class="form-label">Address</label>
-                <input id="address" type="text" class="form-control"  aria-label="addres" required>
+                <input ngModel name="address" #address="ngModel" id="address" type="text" class="form-control"  aria-label="addres" required>
+                <div class="alert alert-danger mt-3" *ngIf="address.touched && !address.valid">Address is required!</div>
             </div>
             <div class="col-md-6 form-group">
                 <label for="contact" class="form-label">Contact Number</label>
-                <input id="contact" type="text" class="form-control"  aria-label="contact" required>
+                <input ngModel name="contact" #contact="ngModel" id="contact" type="text" class="form-control"  aria-label="contact" required>
+                <div class="alert alert-danger mt-3" *ngIf="contact.touched && !contact.valid">Contact Number is required!</div>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 form-group">
                 <label for="valid" class="form-label"><span style="color:#ff0000">*</span> validPeriod</label>
-                <input id="valid" type="date" class="form-control"  aria-label="valid" required>
+                <input ngModel name="valid" id="valid" type="date" class="form-control"  aria-label="valid" required>
             </div>
             <div class="col-md-6 form-group">
                 <label for="appld" class="form-label"><span style="color:#ff0000">*</span> Appld</label>
-                <input id="appld" type="text" class="form-control"  aria-label="username" required>
+                <input ngModel name="appld" id="appld" type="text" class="form-control"  aria-label="username" required>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-6 form-group">
-                <label for="fullname" class="form-label"><span style="color:#ff0000">*</span> capacity(M)</label>
-                <input id="fullname" type="text" class="form-control"  aria-label="First name" required>
+                <label for="capacity" class="form-label"><span style="color:#ff0000">*</span> capacity(M)</label>
+                <input ngModel name="capacity" id="capacity" type="text" class="form-control"  aria-label="First name" required>
             </div>
             <div class="col-md-6 form-group">
-                <label for="username" class="form-label">Postscript</label>
-                <input id="username" type="text" class="form-control"  aria-label="username" required>
+                <label for="postscript" class="form-label">Postscript</label>
+                <input ngModel name="capacity" id="postscript" type="text" class="form-control"  aria-label="username" required>
             </div>
         </div>
         <div class="row mb-3">
             <div class="col-md-8 form-group">
                 <div class="col-md-12">
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <input ngModel name="authorize
+                        " class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Whether to authorize the background?</label> <br>
 
                     </div>  
